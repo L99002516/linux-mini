@@ -14,5 +14,7 @@ jobs:
     - name:  Install Valgrind
       run:  sudo apt-get install valgrind -y
     - uses: actions/checkout@v1
+    - name: change mode
+      run:  chmod a+x client.o && chmod a+x server.o
     - name: Valgrind
       run: valgrind ./client.o && valgrind ./server.o 
